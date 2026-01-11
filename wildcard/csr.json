@@ -1,0 +1,13 @@
+{
+  "CN": "${WILDCARD_CN}",
+  "key": {
+    "algo": "ecdsa",
+    "size": 256
+  },
+  "names": [
+    {
+      "O": "${PKI_NAME}"
+    }
+  ],
+  "hosts": ${HOSTS_JSON}
+}

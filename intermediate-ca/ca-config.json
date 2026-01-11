@@ -1,0 +1,37 @@
+{
+  "signing": {
+    "default": {
+      "expiry": "${VALIDITY_SERVER_CERTS}"
+    },
+    "profiles": {
+      "server": {
+        "usages": [
+          "signing",
+          "digital signature",
+          "key encipherment",
+          "server auth"
+        ],
+        "expiry": "${VALIDITY_SERVER_CERTS}"
+      },
+      "client": {
+        "usages": [
+          "signing",
+          "digital signature",
+          "key encipherment",
+          "client auth"
+        ],
+        "expiry": "${VALIDITY_SERVER_CERTS}"
+      },
+      "peer": {
+        "usages": [
+          "signing",
+          "digital signature",
+          "key encipherment",
+          "server auth",
+          "client auth"
+        ],
+        "expiry": "${VALIDITY_SERVER_CERTS}"
+      }
+    }
+  }
+}
