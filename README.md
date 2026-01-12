@@ -132,7 +132,7 @@ Having working CRL is a requirement for some use cases on MS Windows.
 - Q: Why cfssl *and* openssl?
   - A: Everything is done with cfssl, except for PFX and CRL generation (cfssl has limitations here).
 - Q: How do I make the root CA cert trusted on clients?
-  - A: Refer to your OS/distro docs. We also have convenience install scripts to make the root ca cert trusted on Windows, Linux (Fedora, EL, Debian, Ubuntu) and MacOS clients:
+  - A: Refer to your OS/distro docs. We also have convenience install scripts to make the root ca cert trusted on Windows, Linux (Fedora, EL, Debian, Ubuntu), Android Termux and MacOS clients:
       - in `utils/clientinstall`
       - usage:
         ```
@@ -192,6 +192,7 @@ tinypki
 │       └── wildcard.contoso.com.pfx
 ├── utils
 │   └── clientinstall
+│       ├── install_rootca_androidtermux.sh
 │       ├── install_rootca_debian-ubuntu.sh
 │       ├── install_rootca_fedora-el.sh
 │       ├── install_rootca_macos.sh
