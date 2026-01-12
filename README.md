@@ -131,6 +131,13 @@ Having working CRL is a requirement for some use cases on MS Windows.
   - A: No, this project is for simple web server certs. But you can modify the cfssl json templates to get it to work.
 - Q: Why cfssl *and* openssl?
   - A: Everything is done with cfssl, except for PFX and CRL generation (cfssl has limitations here).
+- Q: How do I make the root CA cert trusted on clients?
+  - A: Refer to your OS/distro docs. We also have convenience install scripts to make the root ca cert trusted on Windows, Linux (Fedora, EL, Debian, Ubuntu) and MacOS clients:
+      - in `utils/clientinstall`
+      - usage:
+        ```
+        ./install_rootca_<os>.sh /path/to/<PKI_NAME>-root-ca.pem`
+        ```
 - Q: How do I install server certs for <Apache|Nginx|HAProxy|...>?
   - A: Check the *excellent* [Mozilla SSL Config Generator](https://ssl-config.mozilla.org/) for practical and - most importantly - *up to date* recommendations for many common web servers.
 - Q: What's the cipher suite?
@@ -183,6 +190,12 @@ tinypki
 │       ├── wildcard.contoso.com-key.pem
 │       ├── wildcard.contoso.com.pem
 │       └── wildcard.contoso.com.pfx
+├── utils
+│   └── clientinstall
+│       ├── install_rootca_debian-ubuntu.sh
+│       ├── install_rootca_fedora-el.sh
+│       ├── install_rootca_macos.sh
+│       └── install_rootca_windows.cmd
 └── crl
     ├── contoso-intermediate.crl
     ├── crlnumber
@@ -194,6 +207,6 @@ tinypki
     ├── list-revoked.sh
     └── revoke.sh
 
-9 directories, 41 files
+11 directories, 45 files
 
 ```
